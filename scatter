@@ -1,0 +1,14 @@
+python 
+import matplotlib.pyplot as plt 
+import numpy as np 
+# Create some data 
+x = np.array([1, 2, 3, 4, 5]) 
+y = np.array([2, 3, 5, 7, 11]) 
+# Calculate the trend line (regression line) 
+z = np.polyfit(x, y, 1) 
+p = np.poly1d(z) 
+# Plot the data points 
+plt.scatter(x, y) 
+# Plot the trend line 
+plt.plot(x, p(x), "r--") 
+plt.show() # Show the graph 
