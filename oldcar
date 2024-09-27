@@ -1,0 +1,10 @@
+def predict_speed(mileage): 
+    initial_speed = 100 
+    speed_decrease = mileage / 10000 
+    predicted_speed = initial_speed - speed_decrease 
+    if predicted_speed < 0: 
+        predicted_speed = 0 
+    return predicted_speed 
+mileage = 50000   
+predicted_speed = predict_speed(mileage) 
+print("Predicted speed:", predicted_speed, "km/h") 
