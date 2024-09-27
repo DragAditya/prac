@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt 
+import numpy as np 
+# Sample data 
+x = np.array([1, 2, 3, 4, 5]) 
+y = np.array([2, 3, 5, 7, 11]) 
+# Calculate the regression line 
+z = np.polyfit(x, y, 1) 
+p = np.poly1d(z) 
+# Create scatter plot 
+plt.scatter(x, y, color='blue') 
+# Plot regression line 
+plt.plot(x, p(x), color='red', linestyle='--') 
+# Add labels and title 
+plt.xlabel('X-axis') 
+plt.ylabel('Y-axis') 
+plt.title('Linear Regression Line') 
+# Show the plot 
+plt.show() 
