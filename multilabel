@@ -1,0 +1,8 @@
+from sklearn.datasets import make_multilabel_classification 
+# Generate synthetic multi-label classification data 
+X, y = make_multilabel_classification(n_samples=100, n_features=20, n_classes=5, n_labels=2, 
+random_state=42) 
+# Display shapes and sample labels 
+print("Feature matrix shape:", X.shape) 
+print("Label matrix shape:", y.shape) 
+print("Sample of labels for first 10 samples:\n", y[:10]) 
