@@ -1,0 +1,19 @@
+import numpy as np 
+import matplotlib.pyplot as plt 
+from sklearn.datasets import make_circles 
+from sklearn.svm import SVC 
+# Generate 2D binary classification data 
+X, y = make_circles(n_samples=100, noise=0.1, factor=0.5) 
+# Train an SVM with an RBF kernel 
+model = SVC(kernel='rbf') 
+model.fit(X, y) 
+# Create a grid to plot the decision boundary 
+xx, yy = np.meshgrid(np.linspace(-1.5, 1.5, 100), np.linspace(-1.5, 1.5, 100)) 
+Z = model.predict(np.c_[xx.ravel(), yy.ravel()]).reshape(xx.shape) 
+# Plot the data and the decision boundary 
+plt.contourf(xx, yy, Z, alpha=0.5) 
+plt.scatter(X[:, 0], X[:, 1], c=y, edgecolors='k') 
+plt.title('Spherical Decision Boundary') 
+plt.xlabel('Feature 1') 
+plt.ylabel('Feature 2') 
+plt.show() 
